@@ -1,0 +1,766 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CTF常用工具 | Lixiney's Blog</title><meta name="author" content="Lixiney"><meta name="copyright" content="Lixiney"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="环境基础   项目名称 Usage 项目地址    Visual Studio Code 一款轻量的文本编辑器 https:&#x2F;&#x2F;code.visualstudio.com&#x2F;   Vmware 虚拟机软件 https:&#x2F;&#x2F;www.vmware.com&#x2F;products&#x2F;desktop-hypervisor&#x2F;workstation-and-fusion   Pycharm Python集成开发环境（I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF常用工具">
+<meta property="og:url" content="http://blog.lixey.top/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:site_name" content="Lixiney&#39;s Blog">
+<meta property="og:description" content="环境基础   项目名称 Usage 项目地址    Visual Studio Code 一款轻量的文本编辑器 https:&#x2F;&#x2F;code.visualstudio.com&#x2F;   Vmware 虚拟机软件 https:&#x2F;&#x2F;www.vmware.com&#x2F;products&#x2F;desktop-hypervisor&#x2F;workstation-and-fusion   Pycharm Python集成开发环境（I">
+<meta property="og:locale">
+<meta property="og:image" content="http://blog.lixey.top/img/12.png">
+<meta property="article:published_time" content="2024-09-28T02:20:06.000Z">
+<meta property="article:modified_time" content="2024-09-28T02:21:23.625Z">
+<meta property="article:author" content="Lixiney">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.lixey.top/img/12.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.lixey.top/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CTF常用工具',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-28 10:21:23'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4066449_d5kq6u6u9dj.css"><link rel="stylesheet" href="/css/mine.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avator.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive-solid"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-bagua2"></i><span> 修仙日记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E7%8E%84%E9%97%A8%E4%BA%94%E6%9C%AF"><i class="fa-fw iconfont icon-shen"></i><span> 玄门五术</span></a></li><li><a class="site-page child" href="/categories/%E9%81%93%E5%AE%B6%E7%BB%8F%E5%85%B8"><i class="fa-fw iconfont icon-ti"></i><span> 道家经典</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/12.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Lixiney's Blog"><span class="site-name">Lixiney's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive-solid"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-bagua2"></i><span> 修仙日记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E7%8E%84%E9%97%A8%E4%BA%94%E6%9C%AF"><i class="fa-fw iconfont icon-shen"></i><span> 玄门五术</span></a></li><li><a class="site-page child" href="/categories/%E9%81%93%E5%AE%B6%E7%BB%8F%E5%85%B8"><i class="fa-fw iconfont icon-ti"></i><span> 道家经典</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CTF常用工具</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-09-28T02:20:06.000Z" title="Created 2024-09-28 10:20:06">2024-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-09-28T02:21:23.625Z" title="Updated 2024-09-28 10:21:23">2024-09-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CTF常用工具"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="环境基础"><a href="#环境基础" class="headerlink" title="环境基础"></a>环境基础</h2><table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>项目地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Visual Studio Code</td>
+<td>一款轻量的文本编辑器</td>
+<td><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></td>
+</tr>
+<tr>
+<td>Vmware</td>
+<td>虚拟机软件</td>
+<td><a target="_blank" rel="noopener" href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion</a></td>
+</tr>
+<tr>
+<td>Pycharm</td>
+<td>Python集成开发环境（IDE）</td>
+<td><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/pycharm/">https://www.jetbrains.com/zh-cn/pycharm/</a></td>
+</tr>
+<tr>
+<td>IDEA</td>
+<td>JAVA集成开发环境</td>
+<td><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/idea/">https://www.jetbrains.com/zh-cn/idea/</a></td>
+</tr>
+<tr>
+<td>PHPstudy</td>
+<td>web环境一键部署（适合初学者使用）</td>
+<td><a target="_blank" rel="noopener" href="https://www.xp.cn/download.html">https://www.xp.cn/download.html</a></td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>容器服务，常用于本地靶场环境的搭建，出了静态附件的题目，几乎所有CTF题目都依赖于Docker</td>
+<td><a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com</a></td>
+</tr>
+<tr>
+<td>PHPStorm</td>
+<td>PHP集成开发环境</td>
+<td><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/phpstorm/">https://www.jetbrains.com/zh-cn/phpstorm/</a></td>
+</tr>
+</tbody></table>
+<h2 id="WEB方向"><a href="#WEB方向" class="headerlink" title="WEB方向"></a>WEB方向</h2><ul>
+<li><p>浏览器插件</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hackbar</td>
+<td>一款经典的黑客插件</td>
+</tr>
+<tr>
+<td>ProxySwitchyOmega</td>
+<td>设置代理</td>
+</tr>
+<tr>
+<td>FoxyProxy</td>
+<td>设置代理（同上）</td>
+</tr>
+<tr>
+<td>Wappalyzer</td>
+<td>快速分析页面的框架技术等信息</td>
+</tr>
+<tr>
+<td>Web-Encoder</td>
+<td>快速设置网页编码</td>
+</tr>
+<tr>
+<td>User-Agent Switcher and Manager</td>
+<td>快速设置UA头</td>
+</tr>
+<tr>
+<td>Modheader</td>
+<td>快速设置请求头</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>常规工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BurpSuite</td>
+<td>代理抓包软件，用于改包、暴力破解等操作</td>
+<td><a target="_blank" rel="noopener" href="https://portswigger.net/burp">https://portswigger.net/burp</a></td>
+</tr>
+<tr>
+<td>AntSword</td>
+<td>Webshell管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/AntSwordProject/antSword">https://github.com/AntSwordProject/antSword</a></td>
+</tr>
+<tr>
+<td>dirsearch</td>
+<td>目录扫描工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch">https://github.com/maurosoria/dirsearch</a></td>
+</tr>
+<tr>
+<td>7kbscan</td>
+<td>目录扫描工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/7kbstorm/7kbscan-WebPathBrute">7kbstorm&#x2F;7kbscan-WebPathBrute: 7kbscan-WebPathBrute Web路径暴力探测工具 (github.com)</a></td>
+</tr>
+<tr>
+<td>postman</td>
+<td>高性能接口测试工具</td>
+<td><a target="_blank" rel="noopener" href="https://www.postman.com/">Postman API Platform</a></td>
+</tr>
+<tr>
+<td>Sqlmap</td>
+<td>自动化sql注入检测利用工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/sqlmapproject/sqlmap">https://github.com/sqlmapproject/sqlmap</a></td>
+</tr>
+<tr>
+<td>Goby</td>
+<td>资产测绘及实战化漏洞扫描工具</td>
+<td><a target="_blank" rel="noopener" href="https://cn.gobies.org/">https://cn.gobies.org/</a></td>
+</tr>
+<tr>
+<td>Nessus</td>
+<td>漏洞扫描工具</td>
+<td><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52985087/article/details/135170187">https://blog.csdn.net/m0_52985087/article/details/135170187</a></td>
+</tr>
+<tr>
+<td>Appscan</td>
+<td>漏洞扫描工具</td>
+<td><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zaixiachengxuyuan/p/14941557.html">https://www.cnblogs.com/zaixiachengxuyuan/p/14941557.html</a></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="MISC–杂项方向"><a href="#MISC–杂项方向" class="headerlink" title="MISC–杂项方向"></a>MISC–杂项方向</h2><ul>
+<li><p>基础工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>项目地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Python</td>
+<td>用途最广的语言</td>
+<td><a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>编解码&#x2F;解密工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>项目地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CyberChef</td>
+<td>编码解码工具</td>
+<td><a target="_blank" rel="noopener" href="https://ctf.mzy0.com/CyberChef3/">https://ctf.mzy0.com/CyberChef3/</a></td>
+</tr>
+<tr>
+<td>Ciphey</td>
+<td>自动化解密工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Ciphey/Ciphey">https://github.com/Ciphey/Ciphey</a></td>
+</tr>
+<tr>
+<td>CTFCrackTools</td>
+<td>国内首个CTF工具框架，含有主流密码加解密，支持自定义python编写的脚本</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/0Chencc/CTFCrackTools">https://github.com/0Chencc/CTFCrackTools</a></td>
+</tr>
+<tr>
+<td>ToolFx</td>
+<td>编码解码工具集（铁柱首推）</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Leon406/ToolsFx/releases">Releases · Leon406&#x2F;ToolsFx (github.com)</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>文本&#x2F;文件工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>010 Editor</td>
+<td>专业的16进制编辑器</td>
+<td><a target="_blank" rel="noopener" href="http://www.010editor.com/">http://www.010editor.com/</a></td>
+</tr>
+<tr>
+<td>winhex</td>
+<td>开源的16进制编辑器</td>
+<td>\</td>
+</tr>
+<tr>
+<td>Binwalk</td>
+<td>文件分离提取工具</td>
+<td>sudo apt-get install binwalk</td>
+</tr>
+<tr>
+<td>Foremost</td>
+<td>用于提取一个文件中包含的多个文件</td>
+<td>sudo apt-get install foremost</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>隐写工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CQR</td>
+<td>二维码识别</td>
+<td>\</td>
+</tr>
+<tr>
+<td>Stegsolve</td>
+<td>图像分析工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Giotino/stegsolve">https://github.com/Giotino/stegsolve</a></td>
+</tr>
+<tr>
+<td>zsteg</td>
+<td>PNG和BMP图片隐写</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zed-0xff/zsteg">https://github.com/zed-0xff/zsteg</a></td>
+</tr>
+<tr>
+<td>Stegdetect</td>
+<td>检测jpg图像隐写工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/abeluck/stegdetect">https://github.com/abeluck/stegdetect</a></td>
+</tr>
+<tr>
+<td>blink_watermark</td>
+<td>图片盲水印</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/guofei9987/blind_watermark">guofei9987&#x2F;blind_watermark: Blind&amp;Invisible Watermark ，图片盲水印，提取水印无须原图！ (github.com)</a></td>
+</tr>
+<tr>
+<td>steghide</td>
+<td>将文件隐藏到图片或者音频中</td>
+<td><a target="_blank" rel="noopener" href="https://steghide.sourceforge.net/">https://steghide.sourceforge.net</a></td>
+</tr>
+<tr>
+<td>audacity</td>
+<td>音频处理软件</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/audacity/audacity">https://github.com/audacity/audacity</a></td>
+</tr>
+<tr>
+<td>Mp3stego</td>
+<td>音频隐写提取工具</td>
+<td><a target="_blank" rel="noopener" href="https://www.petitcolas.net/steganography/mp3stego/">https://www.petitcolas.net/steganography/mp3stego/</a></td>
+</tr>
+<tr>
+<td>Silenteye</td>
+<td>图像&#x2F;音频隐写工具</td>
+<td><a target="_blank" rel="noopener" href="https://achorein.github.io/silenteye/">https://achorein.github.io/silenteye/</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>密码破解工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ZipCenOp</td>
+<td>伪加密加 &#x2F; 解密工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/442048209as/ZipCenOp">https://github.com/442048209as/ZipCenOp</a></td>
+</tr>
+<tr>
+<td>ARCHPR</td>
+<td>压缩文件密码暴力破解工具。</td>
+<td></td>
+</tr>
+<tr>
+<td>Ziperello</td>
+<td>zip 压缩包密码恢复软件。</td>
+<td></td>
+</tr>
+<tr>
+<td>Aopr</td>
+<td>Office 文件密码暴力破解工具。</td>
+<td></td>
+</tr>
+<tr>
+<td>Passware Kit Forensic</td>
+<td>十分强大的解密工具，各类文件 &#x2F; 磁盘密码爆破，密钥搜索等</td>
+<td></td>
+</tr>
+<tr>
+<td>Hashcat</td>
+<td>高性能，GPU&#x2F;CPU 兼容的本地密码破解，支持多种不同格式</td>
+<td>&#x2F;</td>
+</tr>
+<tr>
+<td>John the Ripper</td>
+<td>简单易用的离线破解</td>
+<td>Kali</td>
+</tr>
+<tr>
+<td>Hydra</td>
+<td>远程或在线密码的并行暴力破解。</td>
+<td>Kali</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>流量分析</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Wireshark</td>
+<td>流量分析取证软件</td>
+<td><a target="_blank" rel="noopener" href="https://www.wireshark.org/">https://www.wireshark.org/</a></td>
+</tr>
+<tr>
+<td>UsbKeyboard_Mouse_Hacker_Gui</td>
+<td>一款自带GUI的键盘&#x2F;鼠标流量分析工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Mumuzi7179/UsbKeyboard_Mouse_Hacker_Gui">Mumuzi7179&#x2F;UsbKeyboard_Mouse_Hacker_Gui: 自带GUI的一键解鼠标流量&#x2F;键盘流量小工具 (github.com)</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>取证工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Volatility</td>
+<td>内存分析取证软件</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation">https://github.com/volatilityfoundation</a></td>
+</tr>
+<tr>
+<td>MemProcFS</td>
+<td>新型内存取证框架</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ufrisk/MemProcFS">https://github.com/ufrisk/MemProcFS</a></td>
+</tr>
+<tr>
+<td>NtfsStreamsEditor</td>
+<td>NTFS 流分析</td>
+<td><a target="_blank" rel="noopener" href="https://www.nirsoft.net/utils/alternate_data_streams.html">https://www.nirsoft.net/utils/alternate_data_streams.html</a></td>
+</tr>
+<tr>
+<td>R-Studio</td>
+<td>内存取证 tick+ 磁盘文件恢复分析</td>
+<td><a target="_blank" rel="noopener" href="https://www.r-studio.com/zhcn/data-recovery-software">https://www.r-studio.com/zhcn/data-recovery-software</a></td>
+</tr>
+<tr>
+<td>AutoPsy</td>
+<td>用来分析磁盘映像和恢复文件的开源取证工具</td>
+<td><a target="_blank" rel="noopener" href="https://www.autopsy.com/">https://www.autopsy.com</a></td>
+</tr>
+<tr>
+<td>RegistryExplorer</td>
+<td>注册表文件分析器</td>
+<td><a target="_blank" rel="noopener" href="http://www.regxplor.com/download.html">www.regxplor.com/download.html</a></td>
+</tr>
+<tr>
+<td>PowerToy</td>
+<td>注册表文件分析器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys">https://github.com/microsoft/PowerToys</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>一把梭</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CTF-NetA</td>
+<td>CTF网络流量分析工具（付费）</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Arinue/CTF-NetA">https://github.com/Arinue/CTF-NetA</a></td>
+</tr>
+<tr>
+<td>随波逐流</td>
+<td>离线加密解密，字符编码进行转换，文件隐写查看等多项功能。</td>
+<td><a target="_blank" rel="noopener" href="http://1o1o.xyz/index.html">http://1o1o.xyz/index.html</a></td>
+</tr>
+<tr>
+<td>PuzzleSolver</td>
+<td>MISC杂项一把梭（付费）</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Byxs20/PuzzleSolver">Byxs20&#x2F;PuzzleSolver: 一款针对CTF竞赛MISC的工具~ (github.com)</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>其他开源脚本</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自动爆破 PNG 图片宽高并一键修复工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/AabyssZG/Deformed-Image-Restorer">https://github.com/AabyssZG/Deformed-Image-Restorer</a></td>
+</tr>
+<tr>
+<td>文件反转、倒置、导出工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/AabyssZG/FileReverse-Tools">https://github.com/AabyssZG/FileReverse-Tools</a></td>
+</tr>
+<tr>
+<td>CRC 碰撞全自动化脚本</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/AabyssZG/CRC32-Tools">https://github.com/AabyssZG/CRC32-Tools</a></td>
+</tr>
+<tr>
+<td>自动化内存取证 _GUI 版本</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Tokeii0/VolatilityPro">https://github.com/Tokeii0/VolatilityPro</a></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="密码学方向"><a href="#密码学方向" class="headerlink" title="密码学方向"></a>密码学方向</h2><ul>
+<li><p>Python模块</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Crypto 包</td>
+<td>密码学工具库，用于在 Python 中实现各种加密、解密和哈希算法。</td>
+</tr>
+<tr>
+<td>gmpy2 包</td>
+<td>包含了许多常用的数论函数和算法，适配各种大整数情况，算法效率高于原生库。</td>
+</tr>
+<tr>
+<td>numpy 包</td>
+<td>基于 C 代码实现了底层数据结构和计算函数优化，适用于处理大型数据集和高性能计算，在密码学中常用于矩阵类运算。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>应用程序</p>
+<ul>
+<li>Yafu  本地因数分解程序</li>
+<li>Facordb  在线因数分解程序</li>
+</ul>
+</li>
+</ul>
+<h2 id="Reverse-逆向方向"><a href="#Reverse-逆向方向" class="headerlink" title="Reverse - 逆向方向"></a>Reverse - 逆向方向</h2><ul>
+<li><p>基础工具</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDA</td>
+<td>最常用的静态逆向工具</td>
+<td><a target="_blank" rel="noopener" href="https://hex-rays.com/ida-pro/">https://hex-rays.com/ida-pro/</a></td>
+</tr>
+<tr>
+<td>Ghidra</td>
+<td>开源的静态逆向工具，和 IDA 作用相同</td>
+<td></td>
+</tr>
+<tr>
+<td>x64dbg &#x2F; x32dbg</td>
+<td>在 windows 上使用的开源 x64 &#x2F; x32 调试器</td>
+<td><a target="_blank" rel="noopener" href="https://x64dbg.com/">https://x64dbg.com/</a></td>
+</tr>
+<tr>
+<td>DIE</td>
+<td>查壳工具，拿到程序第一件事就是分析文件类型，是否有壳</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/horsicq/Detect-It-Easy">https://github.com/horsicq/Detect-It-Easy</a></td>
+</tr>
+<tr>
+<td>Exeinfope</td>
+<td>同为查壳工具</td>
+<td><a target="_blank" rel="noopener" href="http://www.exeinfo.byethost18.com/">http://www.exeinfo.byethost18.com</a></td>
+</tr>
+<tr>
+<td>Cheat Engine</td>
+<td>对程序的内存数据进行扫描和调试</td>
+<td><a target="_blank" rel="noopener" href="https://www.cheatengine.org/">https://www.cheatengine.org</a></td>
+</tr>
+<tr>
+<td>GDB</td>
+<td>一般用于 ELF 的动态调试，配合插件 (如 pwngdb，gdb-peda) 使用更佳</td>
+<td><a target="_blank" rel="noopener" href="https://www.sourceware.org/gdb/documentation/">https://www.sourceware.org/gdb/documentation/</a></td>
+</tr>
+<tr>
+<td>z3</td>
+<td>开源的约束求解器，针对约束求解题型</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Z3Prover/z3/">https://github.com/Z3Prover/z3/</a></td>
+</tr>
+<tr>
+<td>dnSpy</td>
+<td>强大的 .NET 调试、修改和反编译的工具 (已停止维护)</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dnSpy/dnSpy">https://github.com/dnSpy/dnSpy</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Java反编译</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JD-GUI</td>
+<td>更好的代码可读性 可导出为 Java 文件或 Jar 包</td>
+<td><a target="_blank" rel="noopener" href="http://java-decompiler.github.io/">http://java-decompiler.github.io/</a></td>
+</tr>
+<tr>
+<td>JEB</td>
+<td>支持 wasm 可交叉引用、可看字节码、反编译结果纯粹</td>
+<td><a target="_blank" rel="noopener" href="https://www.pnfsoftware.com/">https://www.pnfsoftware.com/</a></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Python反编译</p>
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Unpy2exe</td>
+<td>对 py2exe 打包的 python 程序提取字节码文件  <strong>(.pyc)</strong></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/matiasb/unpy2exe">https://github.com/matiasb/unpy2exe</a></td>
+</tr>
+<tr>
+<td>pycdc</td>
+<td>pyc 反编译 , 对高版本有不错兼容性。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zrax/pycdc">https://github.com/zrax/pycdc</a></td>
+</tr>
+<tr>
+<td>Pyinstxtractor</td>
+<td>对 pyInstaller 打包的 python 程序提取字节码文件  **(.pyc)**。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/extremecoders-re/pyinstxtractor">https://github.com/extremecoders-re/pyinstxtractor</a></td>
+</tr>
+<tr>
+<td>[Python]uncompyle</td>
+<td>用于对 Python 字节码文件 <strong>(.pyc)</strong> 的反汇编，将其变成 python 源代码。</td>
+<td><a target="_blank" rel="noopener" href="https://pypi.org/project/uncompyle6/">https://pypi.org/project/uncompyle6/</a></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="PWN-–-二进制方向"><a href="#PWN-–-二进制方向" class="headerlink" title="PWN – 二进制方向"></a>PWN – 二进制方向</h2><table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>Usage</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GDB</td>
+<td>一般用于 ELF 的动态调试，配合插件 (如 pwngdb，gdb-peda) 使用更佳。</td>
+<td><a target="_blank" rel="noopener" href="https://www.sourceware.org/gdb/documentation/">https://www.sourceware.org/gdb/documentation/</a></td>
+</tr>
+<tr>
+<td>Pwntools</td>
+<td>用于编写 EXP。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Gallopsled/pwntools">https://github.com/Gallopsled/pwntools</a></td>
+</tr>
+<tr>
+<td>windbg</td>
+<td>Window 内核模式和用户模式代码调试。</td>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-hardware/drivers/debugger/debugger-download-tools">https://learn.microsoft.com/zh-cn/windows-hardware/drivers/debugger/debugger-download-tools</a></td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://blog.lixey.top">Lixiney</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://blog.lixey.top/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">http://blog.lixey.top/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="/img/12.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/09/23/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="PHP代码审计-序列化与反序列化"><img class="cover" src="/img/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">PHP代码审计-序列化与反序列化</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/09/02/CTF-MISC%E6%9D%82%E9%A1%B9/" title="CTF-MISC杂项"><img class="cover" src="/img/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-02</div><div class="title">CTF-MISC杂项</div></div></a></div><div><a href="/2024/09/23/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="PHP代码审计-序列化与反序列化"><img class="cover" src="/img/1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-23</div><div class="title">PHP代码审计-序列化与反序列化</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avator.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lixiney</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lixiney"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">环境基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB%E6%96%B9%E5%90%91"><span class="toc-number">2.</span> <span class="toc-text">WEB方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC%E2%80%93%E6%9D%82%E9%A1%B9%E6%96%B9%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">MISC–杂项方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%96%B9%E5%90%91"><span class="toc-number">4.</span> <span class="toc-text">密码学方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse-%E9%80%86%E5%90%91%E6%96%B9%E5%90%91"><span class="toc-number">5.</span> <span class="toc-text">Reverse - 逆向方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PWN-%E2%80%93-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%B9%E5%90%91"><span class="toc-number">6.</span> <span class="toc-text">PWN – 二进制方向</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="CTF常用工具"><img src="/img/12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CTF常用工具"/></a><div class="content"><a class="title" href="/2024/09/28/CTF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="CTF常用工具">CTF常用工具</a><time datetime="2024-09-28T02:20:06.000Z" title="Created 2024-09-28 10:20:06">2024-09-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/23/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="PHP代码审计-序列化与反序列化"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PHP代码审计-序列化与反序列化"/></a><div class="content"><a class="title" href="/2024/09/23/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" title="PHP代码审计-序列化与反序列化">PHP代码审计-序列化与反序列化</a><time datetime="2024-09-23T02:04:22.000Z" title="Created 2024-09-23 10:04:22">2024-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/09/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-Session%E9%AA%8C%E8%AF%81/" title="后端开发-Session验证"><img src="/img/12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后端开发-Session验证"/></a><div class="content"><a class="title" href="/2024/09/09/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-Session%E9%AA%8C%E8%AF%81/" title="后端开发-Session验证">后端开发-Session验证</a><time datetime="2024-09-09T01:40:36.000Z" title="Created 2024-09-09 09:40:36">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/09/%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91-Cookie%E9%AA%8C%E8%AF%81/" title="全栈开发-Cookie验证"><img src="/img/12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="全栈开发-Cookie验证"/></a><div class="content"><a class="title" href="/2024/09/09/%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91-Cookie%E9%AA%8C%E8%AF%81/" title="全栈开发-Cookie验证">全栈开发-Cookie验证</a><time datetime="2024-09-09T01:40:28.000Z" title="Created 2024-09-09 09:40:28">2024-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91-JWT%E9%AA%8C%E8%AF%81/" title="前后端分离开发-JWT验证"><img src="/img/28.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前后端分离开发-JWT验证"/></a><div class="content"><a class="title" href="/2024/09/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%BC%80%E5%8F%91-JWT%E9%AA%8C%E8%AF%81/" title="前后端分离开发-JWT验证">前后端分离开发-JWT验证</a><time datetime="2024-09-09T01:33:18.000Z" title="Created 2024-09-09 09:33:18">2024-09-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Lixiney</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/js/sakuraPlus.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
